@@ -6,6 +6,7 @@ import homeRouter from "./routes/home.router.js";
 import { Server } from "socket.io";
 import __dirname from "./utils.js";
 import handlebars from "express-handlebars";
+import { errorHandler } from "./middlewares/errorHandler.js";
 
 // View Instance - Check how to work with from other file. 
 import ProductManager from "./classes/productManager.js";
@@ -28,6 +29,8 @@ app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
 app.use("/realtimeproducts", productsinrealtimeRouter); // WebSocket
 app.use("/home", homeRouter); // Home
+
+app.use(errorHandler);
 
 socketServer.on("connection", async (socket) => {
     console.log("New Connection ON");

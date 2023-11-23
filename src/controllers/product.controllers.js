@@ -1,52 +1,49 @@
-// MongoDB uses
+import * as service from "../services/product.services.js"; 
 
-import ProductManager from "../managers/mdb-product.manager.js";
-
-const productManager = new ProductManager();
-
-export const getAllProducts = async (req, res, next) => {
+export const getAll = async (req, res, next) => {
     try {
-        const products = await productManager.getAll();
-        res.status(200).json(products);
+        const response = await service.getAll();
+        res.status(200).json(response);
     } catch (error) {
         next(error);
     };
 };
-export const getProductById = async (req, res, next) => {
+export const getById = async (req, res, next) => {
     try {
         const { id } = req.params;
-        const product = await productManager.getById(id);
-        if (!product) res.json({msg: 'Product not found'});
-        res.json(product);
+        const objToFind = await service.getById(id);
+        if (!objToFind) res.status(404).json({msg: 'ERROR:> Provided ID not found'});
+        else res.status(200).json(objToFind);
     } catch (error) {
         next(error);
     };
 };
-export const createProduct = async (req, res, next) => {
+export const create = async (req, res, next) => {
     try {
-        const product = req.body;
-        const createdProduct = await productManager.create(product);
-        res.status(201).json(createdProduct);
+        const newObj = req.body;
+        const objCreated = await service.create(newObj);
+        if (!objCreated) res.status(404).json({msg: 'ERROR:> Was not able to create new registry'}); 
+        else res.status(200).json(objCreated);
     } catch (error) {
         next(error);
     };
 };
-export const updateProduct = async (req, res, next) => {
-    try {
-        const { id } = req.params;
-        const updatedProduct = await productManager.update(id, req.body);
-        if (!updatedProduct) res.json({msg: 'Product not found'});
-        res.json(updatedProduct);
-    } catch (error) {
-        next(error);
-    };
-};
-export const deleteProduct = async (req, res, next) => {
+export const update = async (req, res, next) => {
     try {
         const { id } = req.params;
-        const deletedProduct = await productManager.delete(id);
-        if (!deletedProduct) res.json({msg: 'Product not found'});
-        res.json(deletedProduct);
+        const response = await service.update(id, req.body);
+        if (!response) res.status(404).json({msg: 'ERROR:> Was not able to update registry'});
+        else res.status(200).json(response);
+    } catch (error) {
+        next(error);
+    };
+};
+export const remove = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const deletedProduct = await service.remove(id);
+        if (!deletedProduct) res.status(404).json({msg: 'ERROR:> Provided ID does not match and cannot be removed'});
+        else res.status(200).json({msg: 'ID match. Delete successful.'});
     } catch (error) {
         next(error);
     };

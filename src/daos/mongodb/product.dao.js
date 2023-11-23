@@ -1,4 +1,4 @@
-import { ProductsModel } from "../models/product.model.js";
+import { ProductsModel } from "./models/product.model.js";
 
 export default class ProductDaoMongoDB {
     async getAll() {
@@ -26,14 +26,15 @@ export default class ProductDaoMongoDB {
     };
     async update(id, product) {
         try {
-            return await ProductsModel.findByIdAndUpdate({ _id: id }, product, { new: true });
+            return await ProductsModel.findByIdAndUpdate(id, product, { new: true });
         } catch (error) {
             console.error(error);
         };
     };
     async delete(id) { 
         try {
-            return ProductsModel.findByIdAndDelete(id);
+            const response = await ProductsModel.findByIdAndDelete(id);
+            return response
         } catch (error) {
             console.error(error);
         };
