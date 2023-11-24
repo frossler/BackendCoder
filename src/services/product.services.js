@@ -39,10 +39,9 @@ export const update = async (id, obj) => {
     };
 };
 
-// word delete is reserver and can't be used with foo
-export const remove = async () => {
+export const remove = async (id) => {
     try {
-        const toDeleteProduct = await productDao.delete(id, obj);
+        const toDeleteProduct = await productDao.delete(id);
         if (!toDeleteProduct) return null;
         else return toDeleteProduct;
     } catch (error) {
