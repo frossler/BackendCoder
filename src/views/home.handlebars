@@ -1,13 +1,25 @@
-<ul>
-{{#if products.length}}
-    {{#each products}}
-        <li> {{title}} </li>
-        <li>Description: {{description}} </li>
-        <li>Price: {{price}} </li>
-        <li>Stock: {{stock}} </li>
-        <br>
-    {{/each}}
-{{else}}
-    <p>No products to show.</p>
-{{/if}}
-</ul>
+<div class="products-heading">
+    <h3>Available Products</h3>
+</div>
+
+<div class="container-products">
+
+    <div class="table-home">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Stock</th>
+            </tr>
+            {{#each products}}
+                <tr>
+                    <td>{{this.title}}</td>
+                    <td>{{this.description}}</td>
+                    <td>${{this.price}}</td>
+                    <td>{{this.stock}}</td>
+                </tr>
+            {{/each}}
+        </table>
+    </div>
+</div>

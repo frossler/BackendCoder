@@ -1,76 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<div id="realTime-container">
+    <div class="split-left">
+        <h3>Add Products:</h3>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
-</head>
+        <div class="container-form">
 
-<body>
-    <h1 class="title">Products</h1>
-    <div class="main_container">
-        <div class="formulario">
-            <form onsubmit="formSent(event)">
-                <label for="title">Title:</label>
-                <input type="text" id="title" name="title" required /><br /><br />
+            <form id="form">
 
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" required></textarea><br /><br />
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" required />
+                </div>
 
-                <label for="price">Price:</label>
-                <input type="number" id="price" name="price" required /><br /><br />
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input
+                        type="text"
+                        name="description"
+                        id="description"
+                        required
+                    />
+                </div>
 
-                <label for="thumbnails">Thumbnails:</label>
-                <input type="text" id="thumbnails" name="thumbnails" required /><br /><br />
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" name="price" id="price" required />
+                </div>
 
-                <label for="code">Code:</label>
-                <input type="text" id="code" name="code" required /><br /><br />
+                <div class="form-group">
+                    <label for="code">Code</label>
+                    <input type="text" name="code" id="code" required />
+                </div>
 
-                <label for="stock">Stock:</label>
-                <input type="number" id="stock" name="stock" required /><br /><br />
+                <div class="form-group">
+                    <label for="stock">Stock</label>
+                    <input type="text" name="stock" id="stock" required />
+                </div>
 
-                <input type="submit" value="Enviar" />
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <input type="text" name="category" id="category" required />
+                </div>
+
+                <input type="submit" value="SEND" />
+
             </form>
-        </div>
 
-        <div class="productos">
-            <div class="container">
-            </div>
         </div>
     </div>
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/index.js"></script>
+    <div class="split-right">
 
-    <script>
-        const formSent = (event) => {
-            event.preventDefault();
-            const productForm = document.querySelector("form");
-            const formData = new FormData(productForm);
-            const title = formData.get('title')
-            const description = formData.get('description')
-            const price = formData.get('price')
-            const thumbnails = formData.get('thumbnails')
-            const code = formData.get('code')
-            const stock = formData.get('stock')
-            const product = { title, description, price, thumbnails, code, stock }
+        <h3>Products List:</h3>
 
-            fetch('/api/products', {
-                method: "POST",
-                body: JSON.stringify(product),
-                headers: { "Content-type": "application/json" }
-            })
-                .then(response => {
-                    console.log(response.json())
-                })
-                .catch(error => {
-                    console.log("Error >>> " + error)
-                });
-        };
-    </script>
+        <div id="products">
 
+            <div />
 
-</body>
+        </div>
 
-</html>
+    </div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="index.js"></script>
