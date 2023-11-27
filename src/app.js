@@ -55,6 +55,7 @@ socketServer.on("connection", async (socket) => {
     });
 
     // REAL TIME PRODUCTS
+    socketServer.emit("arrayProducts", await productServices.getAll());
     socket.on("newProduct", async (product) => {
         try {
             const newProduct = await productServices.create(product);

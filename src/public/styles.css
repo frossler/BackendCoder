@@ -4,17 +4,20 @@ body {
 }
 
 .container-welcome {
+  font-family: Verdana, sans-serif;
   text-align: center;
   margin-top: 50px;
 }
 
 .store-description {
+  font-family: Verdana, sans-serif;
   color: #ec6619;
   font-style: italic;
   font-size: 20px;
 }
 
 .container-products {
+  font-family: Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,22 +25,63 @@ body {
 }
 
 .products-heading {
+  font-family: Verdana, sans-serif;
   text-align: left;
   margin-left: 20px;
 }
+/* PROD GRID */
+.product {
+  transition: all 1s;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 150px;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+.product h3 {
+  font-size: 20px;
+  margin: 0;
+  color: rgb(1, 96, 238)
+}
+
+.product p {
+  margin: 5px 0;
+  color: #777;
+}
+
+.product p:first-child {
+  font-weight: bold;
+}
+
+.product p:nth-child(odd) {
+  font-weight: bold;
+  color: #555;
+}
+
+.product p:last-child {
+  font-size: 18px;
+  color: #00b95d;
+}
+.product:hover {
+  transform: scale(1.05); /* Smooth Effect */
+}
+/* EOF */
 .container-form {
-  background-color: rgb(228, 130, 38);
-  border-radius: 20px;
+  font-family: Verdana, sans-serif;
+  background-color: rgb(38, 168, 228);
+  border-radius: 5px;
   display: flex;
   flex-wrap: wrap; 
   justify-content: space-between; 
   padding: 40px;
-  max-width: 800px; 
+  max-width: 50%; 
   margin: 0 auto;
 }
 
 .split-left {
+  font-family: Verdana, sans-serif;
   width: 50%;
   float: left;
   display: flex;
@@ -47,10 +91,12 @@ body {
 }
 
 .split-left label {
+  font-family: Verdana, sans-serif;
   margin-bottom: 10px;
 }
 
 .split-left input {
+  font-family: Verdana, sans-serif;
   padding: 10px;
   border-radius: 5px;
   border: 2px solid #5e7c7a;
@@ -60,12 +106,14 @@ body {
 }
 
 #form {
+  font-family: Verdana, sans-serif;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .form-group {
+  font-family: Verdana, sans-serif;
   width: 48%;
   margin-bottom: 20px;
   display: flex;
@@ -74,25 +122,25 @@ body {
 }
 
 #products {
-  width: 80%;
-  padding: 20px;
-  background-color: #7bb4b0;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: Verdana, sans-serif;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  flex-wrap: wrap; 
 }
 
 .split-right {
-  width: 50%;
-  float: right;
+  font-family: Verdana, sans-serif;
+  justify-content: center;
+  margin: 0  auto;
+  max-width: 50%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .table-home {
+  font-family: Verdana, sans-serif;
   width: 80%;
   padding: 20px;
   background-color: #7bb4b0;
@@ -103,6 +151,7 @@ body {
 }
 
 table {
+  font-family: Verdana, sans-serif;
   width: 100%;
   border-collapse: collapse;
   border-radius: 20px;
@@ -112,6 +161,7 @@ table {
 
 th,
 td {
+  font-family: Verdana, sans-serif;
   border: 3px solid #ff961d;
   border-radius: 20px;
   padding: 15px;
@@ -119,6 +169,7 @@ td {
 }
 
 th {
+  font-family: Verdana, sans-serif;
   color: #5e7c7a;
   font-weight: bold;
   font-size: larger;
@@ -126,29 +177,34 @@ th {
 
 
 #chat-container{
+  font-family: Verdana, sans-serif;
   max-width: 600px;
   margin: 30px auto;
   border: 1px solid #ddd;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, .5);
 }
 #chat-window{
+  font-family: Verdana, sans-serif;
   padding: 14px 0; 
   margin: 0 20px;
   border-bottom: 1px solid #e9e9e9;
   color: #555;
 }
 #output p{
+  font-family: Verdana, sans-serif;
   color: #aaa;
   padding: 14px 0;
   margin: 0 20px;
 }
 #actions p{
+  font-family: Verdana, sans-serif;
   padding: 14px;
   margin: 0 20px;
   border-bottom: 1px solid #e9e9e9;
   color: #555;
 }
 input{
+  font-family: Verdana, sans-serif;
   padding: 10px 20px;
   box-sizing: border-box;
   border: 0;
@@ -157,6 +213,7 @@ input{
   width: 100%;
 }
 button{
+  font-family: Verdana, sans-serif;
   background: #41f5e9;
   color: #fff;
   font-size: 19px;

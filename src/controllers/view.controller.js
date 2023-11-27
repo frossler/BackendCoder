@@ -20,6 +20,7 @@ export const renderRealTimeProducts = async (req, res, next) => {
     try {
         const products = await service.getAll();
         res.render("realTimeProducts", { products });
+        // console.log(products);
     } catch (error) {
         next(error.message);
     }

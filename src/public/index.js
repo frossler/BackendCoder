@@ -49,17 +49,34 @@ if (realTimeProductsView) {
         inputStatus.value = ""
     };
 
+    // socketClient.on("arrayProducts", (arrayProducts) => {
+    //     let infoProducts =
+    //         "<table><tr><th>Name</th><th>Description</th><th>Price</th></tr>";
+
+    //     arrayProducts.forEach((p) => {
+    //         infoProducts += `<tr><td>${p.title}</td><td>${p.description}</td><td>$${p.price}</td></tr>`;
+    //     });
+
+    //     infoProducts += "</table>";
+    //     products.innerHTML = infoProducts;
+    // });
+
     socketClient.on("arrayProducts", (arrayProducts) => {
-        let infoProducts =
-            "<table><tr><th>Name</th><th>Description</th><th>Price</th></tr>";
-
-        arrayProducts.forEach((p) => {
-            infoProducts += `<tr><td>${p.title}</td><td>${p.description}</td><td>$${p.price}</td></tr>`;
+        arrayProducts.forEach((element) => {
+          const thumbnails = element.thumbnails.map(thumbnail => `<img src=${thumbnail} style="width: 50px;"></img>`).join('');
+          const boxItem = `
+            <div class="product">
+              <h3>${element.title}</h3>
+              ${thumbnails}
+              <p>Code: ${element.code}</p>
+              <p>Description: ${element.description}</p>
+              <p>ID: ${element.id}</p>
+              <p>$ ${element.price}</p>
+            </div>`;
+          products.innerHTML += boxItem;
         });
+      });
 
-        infoProducts += "</table>";
-        products.innerHTML = infoProducts;
-    });
 }
 
 // CHAT
