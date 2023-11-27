@@ -3,7 +3,7 @@ import * as chatService from "../services/chat.services.js";
 
 export const renderHome = async (req, res, next) => {
     try {
-        const products = await service.getProducts();
+        const products = await service.getAll();
         // FS
         // res.render("home", { products });
         // MONGO
@@ -18,7 +18,7 @@ export const renderHome = async (req, res, next) => {
 
 export const renderRealTimeProducts = async (req, res, next) => {
     try {
-        const products = await service.getProducts();
+        const products = await service.getAll();
         res.render("realTimeProducts", { products });
     } catch (error) {
         next(error.message);

@@ -11,6 +11,9 @@ import  __dirname  from './utils.js';
 import { Server } from 'socket.io';
 import { initMongoDB } from './daos/mongodb/dbconnection.js';
 import { errorHandler } from './middlewares/errorHandler.js';
+
+import * as productServices from "./services/product.services.js";
+import * as chatServices from "./services/chat.services.js";
 ////////////////////////////////////////////////////////////////////////
 
 // Express
@@ -25,8 +28,8 @@ app.use(express.static(__dirname + "/public"));
 // Routers
 app.use('/api/products', productsRouter);
 app.use('/api/carts', cartsRouter);
-app.use("/api/chats", chatRouter);
-app.use("/", viewRouter);
+app.use('/api/chats', chatRouter);
+app.use('/', viewRouter);
 // HBS
 app.engine("handlebars", handlebars.engine());
 app.set("views", __dirname + "/views");
@@ -35,12 +38,12 @@ app.set("view engine", "handlebars");
 // Middlwares
 app.use(errorHandler);
 
+// Server Instance
+const httpServer = app.listen(PORT, () => console.log(` >>> Server Running 🚀 on port # ${PORT}`));
+
 // Persistence
 const persistence = "MONGO";
 if (persistence === "MONGO") await initMongoDB();
-
-// Server Instance
-const httpServer = app.listen(PORT, () => console.log(` >>> Server Running 🚀 on port # ${PORT}`));
 
 // Websocket
 export const socketServer = new Server(httpServer);
@@ -54,10 +57,10 @@ socketServer.on("connection", async (socket) => {
     // REAL TIME PRODUCTS
     socket.on("newProduct", async (product) => {
         try {
-            const newProduct = await productServices.createProduct(product);
+            const newProduct = await productServices.create(product);
             socketServer.emit("productAdded", newProduct);
 
-            const products = await productServices.getProducts();
+            const products = await productServices.getAll();
             socketServer.emit("arrayProducts", products);
         } catch (error) {
             console.error("Error adding product:", error);
