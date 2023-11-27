@@ -8,10 +8,6 @@ import __dirname from "./utils.js";
 import handlebars from "express-handlebars";
 import { errorHandler } from "./middlewares/errorHandler.js";
 
-// View Instance - Check how to work with from other file. 
-import ProductManager from "./classes/productManager.js";
-const store = new ProductManager("./src/data/products.json");
-
 const PORT = 8080;
 const app = express();
 
