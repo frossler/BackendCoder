@@ -1,13 +1,13 @@
-/* --------------------------------- MongoDB -------------------------------- */
+// MONGO
 import { ChatDaoMongoDB } from "../daos/mongodb/chat.dao.js";
 const chatDao = new ChatDaoMongoDB();
 
-/* --------------------------------- FileSystem -------------------------------- */
+//FS
 // import ChatDaoFS from "../dao/filesystem/chat.dao.js";
 // import { __dirname } from "../utils.js";
 // const chatDao = new ChatDaoFS(__dirname + "/dao/filesystem/db/messages.json");
 
-/* ------------------------------------ - ----------------------------------- */
+/////////////////////////////////////////////////////////////
 
 export const getMessages = async () => {
     try {

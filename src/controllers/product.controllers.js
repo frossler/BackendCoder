@@ -18,6 +18,15 @@ export const getById = async (req, res, next) => {
         next(error);
     };
 };
+export const getProductsByLimit = async (req, res, next) => {
+    try {
+        const { limit } = req.query;
+        const response = await service.getProductsByLimit(parseInt(limit));
+        res.status(200).json(response);
+    } catch (error) {
+        next(error.message);
+    }
+};
 export const create = async (req, res, next) => {
     try {
         const newObj = req.body;

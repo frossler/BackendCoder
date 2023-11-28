@@ -19,6 +19,16 @@ export const getById = async (id) => {
     };
 };
 
+export const getProductsByLimit = async (limit) => {
+    try {
+        const products = await productDao.getProductsByLimit(limit);
+        return products;
+    } catch (error) {
+        console.log(error);
+        throw new Error('Error retrieving products by limit');
+  }
+};
+
 export const create = async (obj) => {
     try {
         const newProduct = await productDao.create(obj);

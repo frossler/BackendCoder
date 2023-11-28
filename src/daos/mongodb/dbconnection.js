@@ -5,7 +5,7 @@ const MONGO_ATLAS_URL = "mongodb+srv://dbroot:admin@cluster0.4rndajy.mongodb.net
 
 export const initMongoDB = async () => {
     try {
-        await connect(MONGO_URL);
+        await connect(MONGO_ATLAS_URL);
         console.log(" >>> Connected ✔💚 OK  to MongoDB");
     } catch (error) {
         console.log(error);

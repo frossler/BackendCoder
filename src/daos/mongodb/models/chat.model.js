@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-export const chatCollection = "chats";
+export const chatCollection = "messages";
 
 export const chatSchema = new Schema({
     username: { 

@@ -17,6 +17,15 @@ export default class ProductDaoMongoDB {
             console.error(error);
         };
     };
+    async getProductsByLimit(limit) {
+        try {
+            const response = await ProductsModel.find({}).limit(limit);
+            return response;
+        } catch (error) {
+            console.log(error);
+            throw new Error('Error retrieving products by limit');
+        }
+    }
     async create(product) {
         try {
             return await ProductsModel.create(product);
