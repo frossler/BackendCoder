@@ -107,18 +107,14 @@ body {
 
 #form {
   font-family: Verdana, sans-serif;
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; */
+
 }
 
 .form-group {
   font-family: Verdana, sans-serif;
   width: 250%;
   margin-bottom: 20px;
-  /* display: flex;
-  flex-direction: column; 
-  align-items: center;  */
+
 }
 
 #products {
