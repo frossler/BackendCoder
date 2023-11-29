@@ -53,16 +53,13 @@ socketServer.on("connection", async (socket) => {
     socket.on("disconnect", () => {
         console.log("🔴 User Disconnected");
     });
-
-    // REAL TIME PRODUCTS
-    socketServer.emit("arrayProducts", await productServices.getAll());
+    
+    // REAL TIME PROD VIEW AND CREATE GUI
     socket.on("newProduct", async (product) => {
         try {
             const newProduct = await productServices.create(product);
             socketServer.emit("productAdded", newProduct);
-
-            const products = await productServices.getAll();
-            socketServer.emit("arrayProducts", products);
+            socketServer.emit("arrayProducts", await productServices.getAll());
         } catch (error) {
             console.error("Error adding product:", error);
         }

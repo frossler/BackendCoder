@@ -6,7 +6,7 @@ const realTimeProductsView = document.getElementById("realTime-container");
 
 if (realTimeProductsView) {
 
-    console.log("in real time view");
+    console.log("real time view");
 
     const form = document.getElementById("form");
     const inputName = document.getElementById("title");
@@ -16,6 +16,7 @@ if (realTimeProductsView) {
     const inputStock = document.getElementById("stock");
     const inputCategory = document.getElementById("category");
     const inputStatus = document.getElementById("status");
+    const inputThumbnails = document.getElementById("thumbnails");
 
     const products = document.getElementById("products");
 
@@ -28,6 +29,7 @@ if (realTimeProductsView) {
         const stock = inputStock.value;
         const category = inputCategory.value;
         const status = inputStatus.value;
+        const thumbnails = inputThumbnails.value;
 
         const product = {
             title,
@@ -36,7 +38,8 @@ if (realTimeProductsView) {
             code,
             stock,
             category,
-            status
+            status,
+            thumbnails
         };
         socketClient.emit("newProduct", product);
 
@@ -46,25 +49,15 @@ if (realTimeProductsView) {
         inputPrice.value = "";
         inputStock.value = "";
         inputCategory.value = "";
-        inputStatus.value = ""
+        inputStatus.value = "";
+        inputThumbnails.value = ""
     };
+socketClient.on("arrayProducts", (arrayProducts) => {
+    let newProductsHtml = '';
 
-    // socketClient.on("arrayProducts", (arrayProducts) => {
-    //     let infoProducts =
-    //         "<table><tr><th>Name</th><th>Description</th><th>Price</th></tr>";
-
-    //     arrayProducts.forEach((p) => {
-    //         infoProducts += `<tr><td>${p.title}</td><td>${p.description}</td><td>$${p.price}</td></tr>`;
-    //     });
-
-    //     infoProducts += "</table>";
-    //     products.innerHTML = infoProducts;
-    // });
-
-    socketClient.on("arrayProducts", (arrayProducts) => {
-        arrayProducts.forEach((element) => {
-          const thumbnails = element.thumbnails.map(thumbnail => `<img src=${thumbnail} style="width: 50px;"></img>`).join('');
-          const boxItem = `
+    arrayProducts.forEach((element) => {
+        const thumbnails = element.thumbnails.map(thumbnail => `<img src=${thumbnail} style="width: 50px;"></img>`).join('');
+        const boxItem = `
             <div class="product">
               <h3>${element.title}</h3>
               ${thumbnails}
@@ -73,10 +66,11 @@ if (realTimeProductsView) {
               <p>ID: ${element.id}</p>
               <p>$ ${element.price}</p>
             </div>`;
-          products.innerHTML += boxItem;
-        });
-      });
+        newProductsHtml += boxItem;
+    });
 
+    products.innerHTML = newProductsHtml;
+});
 }
 
 // CHAT
@@ -103,7 +97,7 @@ if (chatView) {
     const message = document.getElementById("message");
     const btn = document.getElementById("send");
     const output = document.getElementById("output");
-    const actions = document.getElementById("actions");
+    const actions = document.getElementById("actions");     
 
     btn.addEventListener("click", () => {
         socketClient.emit("chat:message", {

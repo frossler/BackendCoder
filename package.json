@@ -5,7 +5,7 @@
     "main": "src/app.js",
     "type": "module",
     "scripts": {
-        "test": "nodemon app.js",
+        "test": "node src/app.js",
         "dev": "nodemon app.js"
     },
     "author": "",
