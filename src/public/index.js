@@ -119,7 +119,7 @@ if (chatView) {
 
     socketClient.on("newUser", (username) => {
         Toastify({
-            text: `${username} logged in`,
+            text: `${username} has logged in.`,
             duration: 3000,
             close: true,
             gravity: "top",
