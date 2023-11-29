@@ -7,6 +7,7 @@ export default class ProductDaoMongoDB {
             return products;
         } catch (error) {
             console.error(error);
+            throw new Error('Error getAll');
         };
     };
     async getById(id) {
@@ -15,6 +16,7 @@ export default class ProductDaoMongoDB {
             return product;
         } catch (error) {
             console.error(error);
+            throw new Error('Error getById');
         };
     };
     async getProductsByLimit(limit) {
@@ -31,6 +33,7 @@ export default class ProductDaoMongoDB {
             return await ProductsModel.create(product);
         } catch (error) {
             console.error(error);
+            throw new Error('Error create');
         };
     };
     async update(id, product) {
@@ -38,6 +41,7 @@ export default class ProductDaoMongoDB {
             return await ProductsModel.findByIdAndUpdate(id, product, { new: true });
         } catch (error) {
             console.error(error);
+            throw new Error('Error update');
         };
     };
     async delete(id) { 
@@ -46,6 +50,7 @@ export default class ProductDaoMongoDB {
             return response
         } catch (error) {
             console.error(error);
+            throw new Error('Error delete');
         };
     };
 };

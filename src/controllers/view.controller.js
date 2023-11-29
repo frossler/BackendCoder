@@ -19,8 +19,12 @@ export const renderHome = async (req, res, next) => {
 export const renderRealTimeProducts = async (req, res, next) => {
     try {
         const products = await service.getAll();
-        res.render("realTimeProducts", { products });
+        const productsMongo = products.map((product) =>
+        Object.assign({}, product.toJSON())
+        );
+        res.render("realTimeProducts", { products: productsMongo });
         // console.log(products);
+        
     } catch (error) {
         next(error.message);
     }

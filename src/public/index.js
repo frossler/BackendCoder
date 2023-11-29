@@ -52,6 +52,7 @@ if (realTimeProductsView) {
         inputStatus.value = "";
         inputThumbnails.value = ""
     };
+
 socketClient.on("arrayProducts", (arrayProducts) => {
     let newProductsHtml = '';
 
@@ -68,10 +69,9 @@ socketClient.on("arrayProducts", (arrayProducts) => {
             </div>`;
         newProductsHtml += boxItem;
     });
-
     products.innerHTML = newProductsHtml;
 });
-}
+};
 
 // CHAT
 

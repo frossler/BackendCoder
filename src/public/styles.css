@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(189, 247, 235);
+  background-color: rgb(233, 255, 251);
   color: rgb(0, 0, 0);
 }
 
@@ -74,9 +74,9 @@ body {
   border-radius: 5px;
   display: flex;
   flex-wrap: wrap; 
-  justify-content: space-between; 
+  justify-content: stretch;
   padding: 40px;
-  max-width: 50%; 
+  width: 70%; 
   margin: 0 auto;
 }
 
@@ -107,18 +107,18 @@ body {
 
 #form {
   font-family: Verdana, sans-serif;
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
 .form-group {
   font-family: Verdana, sans-serif;
-  width: 48%;
+  width: 250%;
   margin-bottom: 20px;
-  display: flex;
+  /* display: flex;
   flex-direction: column; 
-  align-items: center; 
+  align-items: center;  */
 }
 
 #products {
@@ -143,8 +143,8 @@ body {
   font-family: Verdana, sans-serif;
   width: 80%;
   padding: 20px;
-  background-color: #7bb4b0;
-  border-radius: 20px;
+  background-color: #cccccc;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,7 +154,7 @@ table {
   font-family: Verdana, sans-serif;
   width: 100%;
   border-collapse: collapse;
-  border-radius: 20px;
+  border-radius: 5px;
   overflow: hidden;
   background-color: white;
 }
@@ -162,15 +162,15 @@ table {
 th,
 td {
   font-family: Verdana, sans-serif;
-  border: 3px solid #ff961d;
-  border-radius: 20px;
+  border: 3px solid #5e5e5e;
+  border-radius: 5px;
   padding: 15px;
   text-align: center;
 }
 
 th {
   font-family: Verdana, sans-serif;
-  color: #5e7c7a;
+  color: #ff9900;
   font-weight: bold;
   font-size: larger;
 }
@@ -214,8 +214,8 @@ input{
 }
 button{
   font-family: Verdana, sans-serif;
-  background: #41f5e9;
-  color: #fff;
+  background: #ff9900;
+  color: #000000;
   font-size: 19px;
   border: 0;
   padding: 12px 0;

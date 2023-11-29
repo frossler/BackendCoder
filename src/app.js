@@ -49,16 +49,16 @@ if (persistence === "MONGO") await initMongoDB();
 export const socketServer = new Server(httpServer);
 
 socketServer.on("connection", async (socket) => {
-    console.log(`🟢 New User Connected ${socket.id}`);
+        console.log(`🟢 - New User Connected > SID#: ${socket.id}`);
+        socketServer.emit("arrayProducts", await productServices.getAll());
     socket.on("disconnect", () => {
-        console.log("🔴 User Disconnected");
+        console.log(`🔴 - User has disconnected > SID#: ${socket.id}`);       
     });
     
-    // REAL TIME PROD VIEW AND CREATE GUI
+    // REAL TIME PROD VIEW AND CREATE GUI // need to add delete as well. 
     socket.on("newProduct", async (product) => {
         try {
-            const newProduct = await productServices.create(product);
-            socketServer.emit("productAdded", newProduct);
+            await productServices.create(product);
             socketServer.emit("arrayProducts", await productServices.getAll());
         } catch (error) {
             console.error("Error adding product:", error);
