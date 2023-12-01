@@ -22,7 +22,7 @@ export const renderRealTimeProducts = async (req, res, next) => {
         const productsMongo = products.map((product) =>
         Object.assign({}, product.toJSON())
         );
-        res.render("realTimeProducts", { products: productsMongo });
+        res.render("realtimeproducts", { products: productsMongo });
         // console.log(products);
         
     } catch (error) {

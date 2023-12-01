@@ -3,9 +3,12 @@ import * as controller from "../controllers/product.controllers.js";
 
 const router = Router();
 
+// // File Import Endpoint
+router.get('/:id', controller.getById);
+
 router.get('/', controller.getAll);
 
-router.get('/:id', controller.getById);
+router.post('/file', controller.createFileController);
 
 router.post('/', controller.create);
 

@@ -1,5 +1,15 @@
 import * as service from "../services/product.services.js"; 
 
+// Import Entries from JSON file
+export const createFileController = async (req, res, next) => {
+    try {
+        const newEntries = await service.createFileEntries();
+        if (!newEntries) throw new Error("ERROR >>> File validation failed");
+        else res.status(200).json(newEntries);
+    } catch (error) {
+        next(error);
+    };
+};
 export const getAll = async (req, res, next) => {
     try {
         const response = await service.getAll();

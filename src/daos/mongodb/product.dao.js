@@ -10,6 +10,15 @@ export default class ProductDaoMongoDB {
             throw new Error('Error getAll');
         };
     };
+    async getByCategory(cat) {
+        try {
+            const response = await ProductsModel.find({ category: cat });
+            return response;
+        } catch (error) {
+            console.error(error);
+            throw new Error('Error getAByCategory');
+        };
+    };
     async getById(id) {
         try {
             const product = await ProductsModel.findById(id);
@@ -22,6 +31,7 @@ export default class ProductDaoMongoDB {
     async getProductsByLimit(limit) {
         try {
             const response = await ProductsModel.find({}).limit(limit);
+            console.log("DAO");
             return response;
         } catch (error) {
             console.log(error);

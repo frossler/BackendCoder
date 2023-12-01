@@ -41,7 +41,7 @@ app.use(errorHandler);
 // Server Instance
 const httpServer = app.listen(PORT, () => console.log(` >>> Server Running 🚀 on port # ${PORT}`));
 
-// Persistence
+// // Persistence
 const persistence = "MONGO";
 if (persistence === "MONGO") await initMongoDB();
 

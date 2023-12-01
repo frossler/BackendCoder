@@ -1,6 +1,21 @@
 import ProductDaoMongoDB from "../daos/mongodb/product.dao.js";
 const productDao = new ProductDaoMongoDB();
 
+// File Enrties Import MISC
+import fs from "fs";
+import __dirname from "../utils.js";
+
+const entriesFile = JSON.parse(fs.readFileSync(__dirname + "/daos/filesystem/data/entries.json", "utf8"));
+export const createFileEntries = async () => {
+    try {
+        const newEnrtry = await productDao.create(entriesFile);
+        if (!newEnrtry) return false;
+        return { message: "File processed successfully"};
+    } catch (error) {
+        console.error(error);
+    }
+};
+
 export const getAll = async () => {
     try {
         return await productDao.getAll();
