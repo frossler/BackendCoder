@@ -4,9 +4,9 @@ import * as chatService from "../services/chat.services.js";
 export const renderHome = async (req, res, next) => {
     try {
         const products = await service.getAll();
-        // FS
+        // // FS
         // res.render("home", { products });
-        // MONGO
+        // // MONGO
         const productsMongo = products.map((product) =>
             Object.assign({}, product.toJSON())
         );

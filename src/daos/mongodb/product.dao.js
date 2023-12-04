@@ -28,10 +28,9 @@ export default class ProductDaoMongoDB {
             throw new Error('Error getById');
         };
     };
-    async getProductsByLimit(limit) {
+    async getByLimit(limit) {
         try {
             const response = await ProductsModel.find({}).limit(limit);
-            console.log("DAO");
             return response;
         } catch (error) {
             console.log(error);

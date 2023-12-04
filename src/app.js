@@ -38,12 +38,12 @@ app.set("view engine", "handlebars");
 // Middlwares
 app.use(errorHandler);
 
-// Server Instance
-const httpServer = app.listen(PORT, () => console.log(` >>> Server Running 🚀 on port # ${PORT}`));
-
 // // Persistence
 const persistence = "MONGO";
 if (persistence === "MONGO") await initMongoDB();
+
+// Server Instance
+const httpServer = app.listen(PORT, () => console.log(` >>> Server Running 🚀 on port # ${PORT}`));
 
 // Websocket
 export const socketServer = new Server(httpServer);

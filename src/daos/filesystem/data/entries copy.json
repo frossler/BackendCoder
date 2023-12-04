@@ -1,0 +1,564 @@
+[
+    {
+      "title": "Mystic Sandalwood Incense",
+      "description": "Premium sandalwood incense for a soothing ambiance",
+      "code": "000012",
+      "status": true,
+      "price": 4.99,
+      "stock": 15,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/brown/white",
+        "https://placehold.co/400/green/black",
+        "https://placehold.co/400/yellow/black"
+      ]
+    },
+    {
+      "title": "Healing Lavender Bundle",
+      "description": "Lavender incense known for its calming and healing properties",
+      "code": "000013",
+      "status": true,
+      "price": 3.49,
+      "stock": 20,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/purple/white",
+        "https://placehold.co/400/pink/black",
+        "https://placehold.co/400/gray/black"
+      ]
+    },
+    {
+      "title": "Zen Garden Aromatherapy Set",
+      "description": "Create a peaceful atmosphere with this aromatherapy set",
+      "code": "000014",
+      "status": true,
+      "price": 19.99,
+      "stock": 5,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/green/white",
+        "https://placehold.co/400/yellow/black",
+        "https://placehold.co/400/blue/black"
+      ]
+    },
+    {
+      "title": "Spiritual Citrus Incense Cones",
+      "description": "Citrus-scented incense cones for a refreshing environment",
+      "code": "000015",
+      "status": true,
+      "price": 5.99,
+      "stock": 12,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/orange/white",
+        "https://placehold.co/400/yellow/black",
+        "https://placehold.co/400/white/black"
+      ]
+    },
+    {
+      "title": "Tranquil Rosemary Smudge Stick",
+      "description": "Rosemary smudge stick for clearing negative energies",
+      "code": "000016",
+      "status": true,
+      "price": 7.99,
+      "stock": 8,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/green/white",
+        "https://placehold.co/400/purple/black",
+        "https://placehold.co/400/blue/black"
+      ]
+    },
+    {
+      "title": "Serenity Patchouli Incense",
+      "description": "Patchouli-scented incense for a serene atmosphere",
+      "code": "000017",
+      "status": true,
+      "price": 6.49,
+      "stock": 18,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/brown/white",
+        "https://placehold.co/400/purple/black",
+        "https://placehold.co/400/orange/black"
+      ]
+    },
+    {
+      "title": "Harmony Jasmine Incense Sticks",
+      "description": "Jasmine-scented incense sticks for a harmonious experience",
+      "code": "000018",
+      "status": true,
+      "price": 8.99,
+      "stock": 14,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/white/gray",
+        "https://placehold.co/400/yellow/black",
+        "https://placehold.co/400/pink/black"
+      ]
+    },
+    {
+      "title": "Calm Chamomile Smudge Bundle",
+      "description": "Chamomile smudge bundle for a calming ritual",
+      "code": "000019",
+      "status": true,
+      "price": 10.99,
+      "stock": 10,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/yellow/white",
+        "https://placehold.co/400/white/black",
+        "https://placehold.co/400/blue/black"
+      ]
+    },
+    {
+      "title": "Astral Vanilla Incense Cones",
+      "description": "Vanilla-scented incense cones for an otherworldly experience",
+      "code": "000020",
+      "status": true,
+      "price": 5.49,
+      "stock": 25,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/white/black",
+        "https://placehold.co/400/brown/black",
+        "https://placehold.co/400/orange/black"
+      ]
+    },
+    {
+      "title": "Meditative Palo Santo Bundle",
+      "description": "Palo Santo bundle for meditation and spiritual practices",
+      "code": "000021",
+      "status": true,
+      "price": 12.99,
+      "stock": 7,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/brown/white",
+        "https://placehold.co/400/gray/black",
+        "https://placehold.co/400/yellow/black"
+      ]
+    },  
+    {
+      "title": "Glowing Rose Facial Oil",
+      "description": "Revitalize your skin with this nourishing rose-infused facial oil",
+      "code": "000012",
+      "status": true,
+      "price": 29.99,
+      "stock": 15,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/pink/white",
+        "https://placehold.co/400/red/black",
+        "https://placehold.co/400/green/black"
+      ]
+    },
+    {
+      "title": "Radiant Citrus Body Scrub",
+      "description": "Achieve radiant skin with this invigorating citrus body scrub",
+      "code": "000013",
+      "status": true,
+      "price": 19.99,
+      "stock": 20,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/orange/white",
+        "https://placehold.co/400/yellow/black",
+        "https://placehold.co/400/white/black"
+      ]
+    },
+    {
+      "title": "Harmonizing Lavender Bath Salts",
+      "description": "Unwind and relax with these harmonizing lavender-infused bath salts",
+      "code": "000014",
+      "status": true,
+      "price": 14.99,
+      "stock": 10,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/purple/white",
+        "https://placehold.co/400/pink/black",
+        "https://placehold.co/400/blue/black"
+      ]
+    },
+    {
+      "title": "Nourishing Coconut Hair Mask",
+      "description": "Treat your hair with this nourishing coconut-infused hair mask",
+      "code": "000015",
+      "status": true,
+      "price": 12.99,
+      "stock": 12,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/brown/white",
+        "https://placehold.co/400/cream/black",
+        "https://placehold.co/400/yellow/black"
+      ]
+    },
+    {
+      "title": "Revitalizing Green Tea Toner",
+      "description": "Refresh your skin with this revitalizing green tea-infused toner",
+      "code": "000016",
+      "status": true,
+      "price": 17.99,
+      "stock": 8,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/green/white",
+        "https://placehold.co/400/teal/black",
+        "https://placehold.co/400/blue/black"
+      ]
+    },
+    {
+      "title": "Soothing Aloe Vera Gel",
+      "description": "Soothe and hydrate your skin with this calming aloe vera gel",
+      "code": "000017",
+      "status": true,
+      "price": 9.99,
+      "stock": 18,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/green/white",
+        "https://placehold.co/400/white/black",
+        "https://placehold.co/400/blue/black"
+      ]
+    },
+    {
+      "title": "Harmony Jasmine Face Mist",
+      "description": "Achieve a harmonious complexion with this jasmine-infused face mist",
+      "code": "000018",
+      "status": true,
+      "price": 14.99,
+      "stock": 14,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/white/gray",
+        "https://placehold.co/400/yellow/black",
+        "https://placehold.co/400/pink/black"
+      ]
+    },
+    {
+      "title": "Calm Chamomile Eye Cream",
+      "description": "Relax tired eyes with this calming chamomile-infused eye cream",
+      "code": "000019",
+      "status": true,
+      "price": 22.99,
+      "stock": 10,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/yellow/white",
+        "https://placehold.co/400/white/black",
+        "https://placehold.co/400/blue/black"
+      ]
+    },
+    {
+      "title": "Astral Vanilla Body Lotion",
+      "description": "Indulge your senses with this otherworldly vanilla-infused body lotion",
+      "code": "000020",
+      "status": true,
+      "price": 16.99,
+      "stock": 25,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/white/black",
+        "https://placehold.co/400/brown/black",
+        "https://placehold.co/400/orange/black"
+      ]
+    },
+    {
+      "title": "Meditative Palo Santo Face Oil",
+      "description": "Experience tranquility with this meditative Palo Santo-infused face oil",
+      "code": "000021",
+      "status": true,
+      "price": 24.99,
+      "stock": 7,
+      "category": "Holistic",
+      "thumbnails": [
+        "https://placehold.co/400/brown/white",
+        "https://placehold.co/400/gray/black",
+        "https://placehold.co/400/yellow/black"
+      ]
+    },
+    {
+      "title": "Chic Leather Gloves",
+      "description": "Stay warm and stylish with these chic leather gloves",
+      "code": "000022",
+      "status": true,
+      "price": 29.99,
+      "stock": 15,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/black/red",
+        "https://placehold.co/400/brown/white",
+        "https://placehold.co/400/grey/black"
+      ]
+    },
+    {
+      "title": "Modern Smartphone Stand",
+      "description": "Keep your phone within reach with this sleek smartphone stand",
+      "code": "000023",
+      "status": true,
+      "price": 19.99,
+      "stock": 50,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/silver/black",
+        "https://placehold.co/400/gold/black",
+        "https://placehold.co/400/black/white"
+      ]
+    },
+    {
+      "title": "Elegant Scarf",
+      "description": "Add a touch of elegance to your outfit with this stylish scarf",
+      "code": "000024",
+      "status": true,
+      "price": 34.99,
+      "stock": 18,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/blue/white",
+        "https://placehold.co/400/purple/black",
+        "https://placehold.co/400/grey/red"
+      ]
+    },
+    {
+      "title": "Trendy Backpack",
+      "description": "Carry your essentials in style with this trendy backpack",
+      "code": "000025",
+      "status": true,
+      "price": 59.99,
+      "stock": 22,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/black/red",
+        "https://placehold.co/400/grey/black",
+        "https://placehold.co/400/blue/white"
+      ]
+    },
+    {
+      "title": "Classic Cufflinks Set",
+      "description": "Complete your formal look with this classic cufflinks set",
+      "code": "000026",
+      "status": true,
+      "price": 45.99,
+      "stock": 12,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/silver/black",
+        "https://placehold.co/400/gold/black",
+        "https://placehold.co/400/black/white"
+      ]
+    },
+    {
+      "title": "Cozy Beanie Hat",
+      "description": "Keep warm in style with this cozy and fashionable beanie hat",
+      "code": "000027",
+      "status": true,
+      "price": 24.99,
+      "stock": 30,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/grey/black",
+        "https://placehold.co/400/black/red",
+        "https://placehold.co/400/blue/white"
+      ]
+    },
+    {
+      "title": "Leather Key Holder",
+      "description": "Organize your keys with this practical and stylish leather key holder",
+      "code": "000028",
+      "status": true,
+      "price": 14.99,
+      "stock": 40,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/brown/black",
+        "https://placehold.co/400/black/yellow",
+        "https://placehold.co/400/blue/white"
+      ]
+    },
+    {
+      "title": "Sleek Umbrella",
+      "description": "Stay dry on rainy days with this sleek and compact umbrella",
+      "code": "000029",
+      "status": true,
+      "price": 19.99,
+      "stock": 20,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/black/red",
+        "https://placehold.co/400/blue/white",
+        "https://placehold.co/400/grey/black"
+      ]
+    },
+    {
+      "title": "Fashionable Belt",
+      "description": "Complete your look with this fashionable and versatile belt",
+      "code": "000030",
+      "status": true,
+      "price": 32.99,
+      "stock": 25,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/black/white",
+        "https://placehold.co/400/brown/black",
+        "https://placehold.co/400/grey/red"
+      ]
+    },
+    {
+      "title": "Stainless Steel Water Bottle",
+      "description": "Stay hydrated in style with this stainless steel water bottle",
+      "code": "000031",
+      "status": true,
+      "price": 27.99,
+      "stock": 15,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/silver/black",
+        "https://placehold.co/400/black/red",
+        "https://placehold.co/400/blue/white"
+      ]
+    },
+    {
+      "title": "Designer Watch Set",
+      "description": "A set of designer watches to complement your style",
+      "code": "000032",
+      "status": true,
+      "price": 129.99,
+      "stock": 10,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/gold/black",
+        "https://placehold.co/400/silver/black",
+        "https://placehold.co/400/rose-gold/black"
+      ]
+    },
+    {
+      "title": "Travel Neck Pillow",
+      "description": "Stay comfortable during your travels with this neck pillow",
+      "code": "000033",
+      "status": true,
+      "price": 19.99,
+      "stock": 30,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/blue/white",
+        "https://placehold.co/400/grey/black",
+        "https://placehold.co/400/purple/black"
+      ]
+    },
+    {
+      "title": "Fancy Leather Bracelet",
+      "description": "Accessorize with this fancy leather bracelet for a trendy look",
+      "code": "000034",
+      "status": true,
+      "price": 22.99,
+      "stock": 25,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/brown/black",
+        "https://placehold.co/400/black/red",
+        "https://placehold.co/400/blue/white"
+      ]
+    },
+    {
+      "title": "Portable Phone Charger",
+      "description": "Keep your devices charged on the go with this portable charger",
+      "code": "000035",
+      "status": true,
+      "price": 34.99,
+      "stock": 20,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/silver/black",
+        "https://placehold.co/400/gold/black",
+        "https://placehold.co/400/black/red"
+      ]
+    },
+    {
+      "title": "Silk Scarf Collection",
+      "description": "Elevate your style with this collection of luxurious silk scarves",
+      "code": "000036",
+      "status": true,
+      "price": 49.99,
+      "stock": 15,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/pink/black",
+        "https://placehold.co/400/purple/white",
+        "https://placehold.co/400/blue/white"
+      ]
+    },
+    {
+      "title": "Vintage Leather Backpack",
+      "description": "Embrace a vintage look with this stylish leather backpack",
+      "code": "000037",
+      "status": true,
+      "price": 69.99,
+      "stock": 18,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/brown/black",
+        "https://placehold.co/400/black/red",
+        "https://placehold.co/400/grey/white"
+      ]
+    },
+    {
+      "title": "Charm Bracelet Set",
+      "description": "Add charm to your wrist with this elegant bracelet set",
+      "code": "000038",
+      "status": true,
+      "price": 27.99,
+      "stock": 22,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/silver/black",
+        "https://placehold.co/400/gold/black",
+        "https://placehold.co/400/black/white"
+      ]
+    },
+    {
+      "title": "Stylish Glasses Case",
+      "description": "Protect your eyewear with this stylish and durable glasses case",
+      "code": "000039",
+      "status": true,
+      "price": 15.99,
+      "stock": 28,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/black/red",
+        "https://placehold.co/400/brown/white",
+        "https://placehold.co/400/grey/black"
+      ]
+    },
+    {
+      "title": "Slim Cardholder Wallet",
+      "description": "Keep your essentials organized with this slim and practical wallet",
+      "code": "000040",
+      "status": true,
+      "price": 18.99,
+      "stock": 35,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/black/yellow",
+        "https://placehold.co/400/brown/black",
+        "https://placehold.co/400/grey/white"
+      ]
+    },
+    {
+      "title": "Trendy Belt Bag",
+      "description": "Stay hands-free and stylish with this trendy belt bag",
+      "code": "000041",
+      "status": true,
+      "price": 39.99,
+      "stock": 15,
+      "category": "Accessories",
+      "thumbnails": [
+        "https://placehold.co/400/black/red",
+        "https://placehold.co/400/grey/black",
+        "https://placehold.co/400/blue/white"
+      ]
+    }
+  ]
+  
+  
