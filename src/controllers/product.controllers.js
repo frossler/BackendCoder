@@ -1,4 +1,14 @@
-import * as service from "../services/product.services.js"; 
+import * as service from "../services/product.services.js";
+
+// Aggregation
+export const aggregation1 = async (req, res, next) => {
+    try {
+        const response = await service.aggregation1();
+        res.status(200).json(response);
+    } catch (error) {
+        next(error);
+    }
+};
 
 // Import Entries from JSON file
 export const createFileController = async (req, res, next) => {

@@ -6,6 +6,9 @@ const router = Router();
 // // File Import Endpoint
 router.post('/file', controller.createFileController);
 
+// // Aggregate Routes
+router.get('/aggregation1', controller.aggregation1);
+
 router.get('/id/:id', controller.getById);
 
 router.get('/all', controller.getAll);

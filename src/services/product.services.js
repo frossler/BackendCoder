@@ -16,6 +16,15 @@ export const createFileEntries = async () => {
     }
 };
 
+// Aggregate
+export const aggregation1 = async () => {
+    try {
+        return await productDao.aggregation1();
+    } catch (error) {
+        console.error(error);
+    }
+};
+
 export const getAll = async () => {
     try {
         return await productDao.getAll();
