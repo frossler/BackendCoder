@@ -37,11 +37,57 @@ export const createCart = async (productId) => {
     }
 };
 
-export const addProductToCart = async (cartId, productId) => {
+export const deleteProductFromCart = async (cartId, productId) => {
     try {
-        const updatedCart = await cartDao.addProductToCart(cartId, productId);
+        const updatedCart = await cartDao.deleteProductFromCart(
+            cartId,
+            productId
+        );
         return updatedCart;
     } catch (error) {
         console.error(error);
     }
 };
+
+export const updateCart = async (cartId, updatedProducts) => {
+    try {
+        const updatedCart = await cartDao.updateCart(cartId, updatedProducts);
+        return updatedCart;
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+export const updateProductQuantity = async (cartId, productId, newQuantity) => {
+    try {
+        const updatedCart = await cartDao.updateProductQuantity(
+            cartId,
+            productId,
+            newQuantity
+        );
+        return updatedCart;
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+export const deleteAllProductsFromCart = async (cartId) => {
+    try {
+        const updatedCart = await cartDao.deleteAllProductsFromCart(cartId);
+        return updatedCart;
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+
+
+
+// export const addProductToCart = async (cartId, productId) => {
+//     try {
+//         const updatedCart = await cartDao.addProductToCart(cartId, productId);
+//         return updatedCart;
+//     } catch (error) {
+//         console.error(error);
+//     }
+// };
