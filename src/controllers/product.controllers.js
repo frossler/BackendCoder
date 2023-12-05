@@ -3,7 +3,8 @@ import * as service from "../services/product.services.js";
 // Aggregation
 export const aggregation1 = async (req, res, next) => {
     try {
-        const response = await service.aggregation1();
+        const { category } = req.query;
+        const response = await service.aggregation1(category);
         res.status(200).json(response);
     } catch (error) {
         next(error);

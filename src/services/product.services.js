@@ -17,9 +17,9 @@ export const createFileEntries = async () => {
 };
 
 // Aggregate
-export const aggregation1 = async () => {
+export const aggregation1 = async (category) => {
     try {
-        return await productDao.aggregation1();
+        return await productDao.aggregation1(category);
     } catch (error) {
         console.error(error);
     }

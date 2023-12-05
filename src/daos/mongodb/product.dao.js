@@ -3,12 +3,12 @@ import { ProductsModel } from "./models/product.model.js";
 export default class ProductDaoMongoDB {
 
     // // AGGR PIPELINEs 
-    async aggregation1(){
+    async aggregation1(category){
         try {
             return await ProductsModel.aggregate([
                 // Stage 1
                 {
-                    $match: { category: 'Holistic' }
+                    $match: { category: category }
                 }
             ])
         } catch (error) {
