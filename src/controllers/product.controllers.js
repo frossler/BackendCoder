@@ -1,16 +1,5 @@
 import * as service from "../services/product.services.js";
 
-// Aggregation
-export const aggregation1 = async (req, res, next) => {
-    try {
-        const { category } = req.query;
-        const response = await service.aggregation1(category);
-        res.status(200).json(response);
-    } catch (error) {
-        next(error);
-    }
-};
-
 // Import Entries from JSON file
 export const createFileController = async (req, res, next) => {
     try {
@@ -20,6 +9,50 @@ export const createFileController = async (req, res, next) => {
     } catch (error) {
         next(error);
     };
+};
+
+// // PIPELINEs
+export const aggregationCategory = async (req, res, next) => {
+    try {
+        const { category } = req.query;
+        if (category === undefined) {
+            const products = await service.getAll();
+            return res.json(products);
+        } else {
+            const response = await service.aggregationCategory(category);
+            res.json(response);
+        }
+    } catch (error) {
+        next(error.message);
+    }
+};
+export const aggregationPrice = async (req, res, next) => {
+    try {
+        const { sort } = req.query;
+        if (sort === undefined) {
+            const products = await service.getAll();
+            return res.json(products);
+        } else {
+            const response = await service.aggregationPrice(sort);
+            res.json(response);
+        }
+    } catch (error) {
+        next(error.message);
+    }
+};
+
+// // ADD TO CART
+export const addProductToCart = async (req, res, next) => {
+    try {
+        const { cartId, productId } = req.params;
+        const newProduct = await service.addProductToCart(cartId, productId);
+        console.log(newProduct);
+        if (!newProduct)
+            res.status(404).json({ msg: "Error adding the product" });
+        else res.status(200).json(newProduct);
+    } catch (error) {
+        next(error.message);
+    }
 };
 
 // QUERYs
@@ -32,29 +65,35 @@ export const getByLimit = async (req, res, next) => {
         next(error.message);
     }
 };
-export const getProductByCategory = async (req, res, next) => {
-    try {
-        const { category } = req.query;
-        if (category === undefined) {
-            const products = await service.getAll();
-            return res.json(products);
-        } else {
-            const response = await service.getProductByCategory(category);
-            res.json(response);
-        }
-    } catch (error) {
-        next(error.message);
-    }
-};
 
 // CRUD 
 export const getAll = async (req, res, next) => {
     try {
-        const response = await service.getAll();
-        res.status(200).json(response);
+        const { page, limit } = req.query;
+        const response = await service.getAll(page, limit);
+        if (!response)
+            res.status(404).json({ msg: "Error getting the products" });
+        const next = response.hasNextPage
+            ? `http://localhost:8080/api/products/all?page=${response.nextPage}`
+            : null;
+        const prev = response.hasPrevPage
+            ? `http://localhost:8080/api/products/all?page=${response.prevPage}`
+            : null;
+        res.status(200).json({
+            payload: response.docs,
+            info: {
+                count: response.totalDocs,
+                totalPages: response.totalPages,
+                hasNextPage: response.hasNextPage,
+                hasPrevPage: response.hasPrevPage,
+                page: response.page,
+                nextPage: next,
+                prevPage: prev,
+            },
+        });
     } catch (error) {
-        next(error);
-    };
+        next(error.message);
+    }
 };
 export const getById = async (req, res, next) => {
     try {

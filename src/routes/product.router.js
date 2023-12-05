@@ -7,13 +7,16 @@ const router = Router();
 router.post('/file', controller.createFileController);
 
 // // Aggregate Routes
-router.get('/aggregation1', controller.aggregation1);
+router.get("/pipelineCategory", controller.aggregationCategory);
 
+router.get("/pipelinePrice", controller.aggregationPrice);
+
+// // CRUD Routes
 router.get('/id/:id', controller.getById);
 
 router.get('/all', controller.getAll);
 
-router.get('/', controller.getByLimit);
+router.get('/', controller.getAll);
 
 router.post('/', controller.create);
 

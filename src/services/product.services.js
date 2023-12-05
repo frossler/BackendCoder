@@ -16,23 +16,52 @@ export const createFileEntries = async () => {
     }
 };
 
-// Aggregate
-export const aggregation1 = async (category) => {
+// // PIPELINEs
+export const aggregationCategory = async (category) => {
     try {
-        return await productDao.aggregation1(category);
+        return await productDao.aggregationCategory(category);
     } catch (error) {
-        console.error(error);
+        console.log(error);
     }
 };
 
-export const getAll = async () => {
+export const aggregationPrice = async (sort) => {
     try {
-        return await productDao.getAll();
+        return await productDao.aggregationPrice(sort);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+// // QUERYS
+export const getProductByCategory = async (category) => {
+    try {
+        return await productDao.getProductByCategory(category);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+// // ADD TO CART
+export const addProductToCart = async (cartId, productId) => {
+    try {
+        const exists = await productDao.getProductsById(productId);
+        const newProduct = await productDao.addProductToCart(cartId, productId);
+        if (!exists) throw new Error("Product not found");
+        return newProduct;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+// // CRUD
+export const getAll = async (page, limit) => {
+    try {
+        return await productDao.getAll(page, limit);
     } catch (error) {
         console.error(error);
     };
 };
-
 export const getById = async (id) => {
     try {
         const product = await productDao.getById(id);
@@ -42,7 +71,6 @@ export const getById = async (id) => {
         console.error(error);
     };
 };
-
 export const getByLimit = async (limit) => {
     try {
         const products = await productDao.getByLimit(limit);
@@ -52,7 +80,6 @@ export const getByLimit = async (limit) => {
         throw new Error('Error retrieving products by limit');
   }
 };
-
 export const create = async (obj) => {
     try {
         const newProduct = await productDao.create(obj);
@@ -62,7 +89,6 @@ export const create = async (obj) => {
         console.error(error);
     };
 };
-
 export const update = async (id, obj) => {
     try {
         const updatedProduct = await productDao.update(id, obj);
@@ -72,13 +98,12 @@ export const update = async (id, obj) => {
         console.error(error);
     };
 };
-
 export const remove = async (id) => {
     try {
         const toDeleteProduct = await productDao.delete(id);
         if (!toDeleteProduct) return null;
         else return toDeleteProduct;
     } catch (error) {
-        
+        console.error(error);       
     };
 };
