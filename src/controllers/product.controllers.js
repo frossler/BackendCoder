@@ -95,6 +95,14 @@ export const getAll = async (req, res, next) => {
         next(error.message);
     }
 };
+export const getAllView = async (req, res, next) => {
+    try {
+        const response = await service.getAllView();
+        res.status(200).json(response);
+    } catch (error) {
+        next(error);
+    };
+};
 export const getById = async (req, res, next) => {
     try {
         const { id } = req.params;

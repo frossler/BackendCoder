@@ -62,6 +62,14 @@ export const getAll = async (page, limit) => {
         console.error(error);
     };
 };
+export const getAllView = async () => {
+    try {
+        return await productDao.getAllView();
+    } catch (error) {
+        console.error(error);
+    };
+};
+
 export const getById = async (id) => {
     try {
         const product = await productDao.getById(id);

@@ -3,7 +3,7 @@ import * as chatService from "../services/chat.services.js";
 
 export const renderHome = async (req, res, next) => {
     try {
-        const products = await service.getAll();
+        const products = await service.getAllView();
         // // FS
         // res.render("home", { products });
         // // MONGO
@@ -18,13 +18,12 @@ export const renderHome = async (req, res, next) => {
 
 export const renderRealTimeProducts = async (req, res, next) => {
     try {
-        const products = await service.getAll();
+        const products = await service.getAllView();
         const productsMongo = products.map((product) =>
         Object.assign({}, product.toJSON())
         );
         res.render("realtimeproducts", { products: productsMongo });
         // console.log(products);
-        
     } catch (error) {
         next(error.message);
     }

@@ -94,6 +94,15 @@ export default class ProductDaoMongoDB {
             throw new Error('Error getAll');
         };
     };
+    async getAllView() {
+              try {
+                const products = await ProductsModel.find({});
+                return products;
+            } catch (error) {
+                console.error(error);
+                throw new Error('Error getAllView');
+        };
+    };
     async getByCategory(cat) {
         try {
             const response = await ProductsModel.find({ category: cat });
