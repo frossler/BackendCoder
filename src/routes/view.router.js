@@ -3,8 +3,24 @@ import * as controller from "../controllers/view.controller.js";
 
 const router = Router();
 
-router.get("/", controller.renderHome);
+router.get("/home", controller.renderHome);
 router.get("/realtimeproducts", controller.renderRealTimeProducts);
 router.get("/chat", controller.renderChat);
+
+router.get('/', (req, res)=>{
+    res.render('login')
+})
+
+router.get('/register', (req, res)=>{
+    res.render('register')
+})
+
+router.get('/profile', (req, res)=>{
+    res.render('profile')
+})
+
+router.get('/register-error', (req, res)=>{
+    res.render('register-error')
+})
 
 export default router;
