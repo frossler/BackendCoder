@@ -7,7 +7,9 @@ router.get("/home", controller.renderHome);
 router.get("/realtimeproducts", controller.renderRealTimeProducts);
 router.get("/chat", controller.renderChat);
 
-router.get('/', (req, res)=>{
+
+// Requiered to add in this / route
+router.get('/login', (req, res)=>{
     res.render('login')
 })
 

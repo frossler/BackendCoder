@@ -18,6 +18,10 @@ const userSchema = new Schema({
     type: Number,
     required: true,
   },
+  gender: {
+    type: String,
+    required: true,
+  },
   password: {
     type: String,
     required: true,

@@ -1,11 +1,19 @@
 import { Router } from "express";
-import UserController from "../controllers/user.controller.js";
-const controller = new UserController();
+import * as userControllers from "../controllers/user.controllers.js";
+import { validateLogin } from "../middlewares/validateLogin.js";
 
-const router = Router();
+const routerUser = Router();
 
-router.post("/register", controller.register);
+routerUser.post('/register', userControllers.register);
 
-router.post("/login", controller.login);
+routerUser.post("/login", userControllers.login);
 
-export default router;
+routerUser.get("/logout", userControllers.logout);
+
+routerUser.get('/profile', validateLogin, userControllers.profile);
+
+
+export default routerUser;
+
+//Agregar validaciones a las rutas de vistas para que, si aún no estoy logueado, no pueda entrar a ver mi perfil, y si ya estoy logueado, no pueda volver a loguearme o registrarme.
+//En la vista de perfil, se deben arrojar los datos no sensibles del usuario que se haya logueado.
